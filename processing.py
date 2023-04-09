@@ -11,7 +11,7 @@ with open('key.txt', 'r') as f: key = f.readlines()[0]
 class Processor:
     def __init__(self) -> None:
 
-        self.llm = OpenAI(temperature=0, openai_api_key=key)
+        self.llm = OpenAI(temperature=1, openai_api_key=key)
         self.chain = load_summarize_chain(self.llm, chain_type="map_reduce")
         self.text_splitter = CharacterTextSplitter()
         self.buffer = ''

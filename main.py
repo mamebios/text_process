@@ -28,7 +28,7 @@ with ui.tab_panels(tabs, value='Resumir'):
 
             with ui.column():
                 with ui.row().classes('no-wrap'):
-                    ui.label('Temperatura')
+                    ui.label('Criatividade')
                 with ui.row().classes('w-[50rem] no-wrap'):
                     slider = ui.slider(min=0, max=2, value=1, step=0.1, on_change = lambda: p.change_temperature(slider.value)).props('label')
                     ui.label().bind_text_from(slider, 'value')
