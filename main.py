@@ -21,7 +21,7 @@ with ui.tab_panels(tabs, value='Resumir'):
                 async def g():
                     button.props(add='loading')
                     await asyncio.sleep(1)
-                    result.set_text(p.process(textarea.value))
+                    result.set_text((textarea.value == '') or p.process(textarea.value))
                     button.props(remove='loading')
                 
             button = ui.button('Process', on_click = g)
