@@ -44,19 +44,19 @@ with ui.tab_panels(tabs, value='Resumir'):
             with ui.column().classes('w-[38rem]'):
                     with ui.card().classes('w-full'):
                         ui.label("Resultado:\n")
-                        result = ui.label().classes('w-full')
+                        result = ui.label().classes('w-full hyphens-auto')
 
     with ui.tab_panel('Topificar'):
         ui.label('Topificar').classes('font-black text-2xl')
         with ui.row().classes('center no-wrap'):
             with ui.column().classes('w-[12.6rem]'):
-                async def g():
+                async def g_t():
                     button_t.props(add='loading')
                     await asyncio.sleep(1)
                     result_t.set_text((textarea_t.value == '') or t.process(textarea_t.value))
                     button_t.props(remove='loading')
                 
-            button_t = ui.button('Process', on_click = g)
+            button_t = ui.button('Process', on_click = g_t)
 
 
         with ui.row().classes('w-full no-wrap'):
@@ -67,7 +67,7 @@ with ui.tab_panels(tabs, value='Resumir'):
             with ui.column().classes('w-[38rem]'):
                     with ui.card().classes('w-full'):
                         ui.label("Resultado:\n")
-                        result_t = ui.label().classes('w-full')
+                        result_t = ui.label().classes('w-full whitespace-pre')
         
 
 

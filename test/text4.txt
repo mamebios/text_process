@@ -1,0 +1,6 @@
+We study stochastic dynamics of the Prisoner’s Dilemma game on random Erd ̈os-R ́enyi and
+scale-free Barab ́asi-Albert networks with a cost of maintaining a link between interacting players.
+We show that when the cost increases, the population of players located Barab ́asi-Albert network
+undergoes a sharp transition from an ordered state, where almost all players cooperate, to a state
+in which both cooperators and defectors coexist. At the critical cost, the population oscillates in
+time between these two states.

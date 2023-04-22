@@ -1,0 +1,30 @@
+Most entropy measures depend on the spread of the proba-
+bility distribution over the sample space X , and the maxi-
+mum entropy achievable scales proportionately with the sam-
+ple space cardinality |X |. For a finite |X |, this yields robust
+entropy measures which satisfy many important properties,
+such as invariance to bijections, while the same is not true
+for continuous spaces (where |X | = ∞). Furthermore, since
+R and Rd (d ∈ Z+) have the same cardinality (from Can-
+tor’s correspondence argument), cardinality-dependent en-
+tropy measures cannot encode the data dimensionality. In this
+work, we question the role of cardinality and distribution
+spread in defining entropy measures for continuous spaces,
+which can undergo multiple rounds of transformations and
+distortions, e.g., in neural networks. We find that the average
+value of the local intrinsic dimension of a distribution, de-
+noted as ID-Entropy, can serve as a robust entropy measure
+for continuous spaces, while capturing the data dimensional-
+ity. We find that ID-Entropy satisfies many desirable proper-
+ties and can be extended to conditional entropy, joint entropy
+and mutual-information variants. ID-Entropy also yields new
+information bottleneck principles and also links to causality.
+In the context of deep learning, for feedforward architectures,
+we show, theoretically and empirically, that the ID-Entropy
+of a hidden layer directly controls the generalization gap for
+both classifiers and auto-encoders, when the target function is
+Lipschitz continuous. Our work primarily shows that, for con-
+tinuous spaces, taking a structural rather than a statistical ap-
+proach yields entropy measures which preserve intrinsic data
+dimensionality, while being relevant for studying various ar-
+chitectures

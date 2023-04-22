@@ -10,9 +10,14 @@ from langchain.document_loaders import TextLoader
 #from langchain.vectorstores.chroma import Chroma
 from llama_index import GPTSimpleVectorIndex, SimpleDirectoryReader
 from llama_index import Document as Doc
+from llama_index import ServiceContext
+from llama_index import LLMPredictor
+
+import os
 
 key = ''
 with open('key.txt', 'r') as f: key = f.readlines()[0]
+os.environ["OPENAI_API_KEY"] = key
 
 class Summarizer:
     def __init__(self) -> None:
@@ -39,18 +44,21 @@ class Summarizer:
 class Topicfier:
     def __init__(self) -> None:
         #self.llm = OpenAI(temperature=1, openai_api_key=key)
-        self.query = 'What are the most important topics of this text?'
-        pass
+        #self.llm = ServiceContext.from_defaults(llm_predictor= OpenAI(temperature=1, openai_api_key=key) ) 
+        #self.query = 'What are the most important topics of this text?'
+        self.query = 'Give me a list of the most important topics'
 
     def process(self, text: str) -> str:
 
         doc = [Doc(text)]
 
-        index = GPTSimpleVectorIndex.from_documents(doc)
+        index = GPTSimpleVectorIndex.from_documents(doc)#, service_context=self.llm)
         response = index.query(self.query)
         print(response)
+        print(type(response))
+        
         #return response
-        return 'ok'
+        return response.response
         
         #vectorstore = Chroma().from_texts([text])
         

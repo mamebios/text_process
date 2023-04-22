@@ -1,0 +1,11 @@
+In this review we discuss the latest results concerning development of the machine learning al-
+gorithms for characterization of the magnetic skyrmions that are topologically-protected magnetic
+textures originated from the Dzyaloshinskii-Moriya interaction that competes Heisenberg isotropic
+exchange in ferromagnets. We show that for classical spin systems there is a whole pool of machine
+approaches allowing their accurate phase classification and quantitative description on the basis of
+few magnetization snapshots. In turn, investigation of the quantum skyrmions is a less explored
+issue, since there are fundamental limitations on the simulation of such wave functions with classical
+supercomputers. One needs to find the ways to imitate quantum skyrmions on near-term quantum
+computers. In this respect, we discuss implementation of the method for estimating structural com-
+plexity of classical objects for characterization of the quantum skyrmion state on the basis of limited
+number of bitstrings obtained from the projective measurements.
