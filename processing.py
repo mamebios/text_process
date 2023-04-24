@@ -43,30 +43,16 @@ class Summarizer:
     
 class Topicfier:
     def __init__(self) -> None:
-        #self.llm = OpenAI(temperature=1, openai_api_key=key)
-        #self.llm = ServiceContext.from_defaults(llm_predictor= OpenAI(temperature=1, openai_api_key=key) ) 
-        #self.query = 'What are the most important topics of this text?'
         self.query = 'Give me a list of the most important topics'
 
     def process(self, text: str) -> str:
 
         doc = [Doc(text)]
 
-        index = GPTSimpleVectorIndex.from_documents(doc)#, service_context=self.llm)
+        index = GPTSimpleVectorIndex.from_documents(doc)
         response = index.query(self.query)
         print(response)
         print(type(response))
         
-        #return response
         return response.response
         
-        #vectorstore = Chroma().from_texts([text])
-        
-        #index = VectorStoreIndexWrapper(vectorstore=vectorstore)
-
-        #return index.query(self.query)
-        #--------
-        #chain = RetrievalQA.from_chain_type(
-        #    self.llm, retriever=self.vectorstore.as_retriever())
-        
-        #return chain.run(self.query)

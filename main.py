@@ -5,10 +5,6 @@ from processing import *
 p = Summarizer()
 t = Topicfier()
 
-# ui.label('Resumir').classes('font-black text-2xl')
-# ui.icon('sentiment_very_dissatisfied')
-
-
 with ui.tabs() as tabs:
     ui.tab('Resumir', icon=None) #home
     ui.tab('Topificar', icon=None) #info
@@ -29,12 +25,11 @@ with ui.tab_panels(tabs, value='Resumir'):
 
             with ui.column():
                 with ui.row().classes('no-wrap'):
-                    ui.label('Temperatura(?)').tooltip('Temperatura é um hiperparâmetro que pode ser usado para controlar a aleatoriedade e criatividade do texto gerado. ' \
-                                                       'Temperaturas altas (>1.5) podem gerar textos ininteligíveis.')
+                    ui.label('Criatividade (?)').tooltip('Criatividade é um hiperparâmetro que pode ser usado para controlar a aleatoriedade do texto gerado. ' \
+                                                       'Uma criatividade alta (>1.5) pode gerar textos ininteligíveis.')
                 with ui.row().classes('w-[50rem] no-wrap'):
                     slider = ui.slider(min=0, max=2, value=1, step=0.1, on_change = lambda: p.change_temperature(slider.value)).props('label')
                     ui.label().bind_text_from(slider, 'value')
-            #spinner = ui.spinner(size='lg').set_visibility('false')
 
         with ui.row().classes('w-full no-wrap'):
             with ui.column().classes('w-[38rem]'):
